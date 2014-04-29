@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>@TITLE@</title>
+		<link rel="apple-touch-icon" href="@TUNING_AppleTouchIcon@" tphmin="0" tphmax="1" tphlink="TUNING_AppleTouchIcon" />
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script>
+
+			$( document ).on( "mobileinit", function() {
+			$.mobile.listview.prototype.options.autodividersSelector = function( li ) {
+			return li.find('span[class=itemvalue]').text().slice( 0, 1 ).toUpperCase();
+			};
+			});
+			$(document).bind("mobileinit", function(){
+			if (($.mobile.defaultPageTransition = '{%@TUNING_defaultPageTransition@%}') == '')
+			$.mobile.defaultPageTransition = 'slide';
+			});
+			$(document).ready(function(){
+			var backUrl;
+			$(document).bind("pagebeforechange", function(event, data){
+			if (typeof data.toPage == "string") {
+			if (data.toPage.substring(0,1) == "/") {
+			data.toPage = backUrl;
+			data.options.reverse=true;
+			}
+			}
+			});
+			});
+
+		</script>
+		<link rel="stylesheet" href="@SERVER_URL_PREFIX@Resources/System/StyleSheet/add2home.css" tphmin="0" tphmax="1" tphlink="TUNING_add2home" />
+		<script src="@SERVER_URL_PREFIX@Resources/System/Script/add2home.js" tphmin="0" tphmax="1" tphlink="TUNING_add2home"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.js"></script>
+		<link rel="stylesheet" type="text/css" href="@STYLE_SHEET_URL@" tphmin="0" tphmax="1" tphlink="STYLE_SHEET_URL" />
+		<link rel="stylesheet" href="@TUNING_themeCSS@" tphmin="0" tphmax="1" tphlink="TUNING_themeCSS" />
+
+<!-- added to lock title -->
+<script src="http://voxeo.cloudapp.net/content/voxeo/issue1_freeze_title_bar/iscroll.js"></script>
+<script src="http://voxeo.cloudapp.net/content/voxeo/issue1_freeze_title_bar/jquery.mobile.iscrollview.js"></script>
+<link rel="stylesheet" href="http://voxeo.cloudapp.net/content/voxeo/issue1_freeze_title_bar/jquery.mobile.iscrollview.css" />
+<link rel="stylesheet" href="http://voxeo.cloudapp.net/content/voxeo/issue1_freeze_title_bar/jquery.mobile.iscrollview-pull.css" />
+<!-- -->
+
+		<replicator tphmin="0" tphmax="1" tphlink="GAWebPropertyID">
+			<import src="./renderTemplates/Web/GAWebJQProlog.xml" />
+		</replicator>
+		<style type="text/css">
+			li a.PanelHeader {font-size:1.5em;background-color:white; pointer-events:none;
+       cursor:default;}
+		</style>
+	</head>
+	<body style="overflow:hidden">
+		<div data-role="page" id="main" opt-data-theme="TUNING_theme" data-theme="{%@TUNING_theme@%}">
+			<div data-role="header" data-id="navHeaderDiv" data-position="fixed" opt-data-theme="TUNING_theme" data-theme="{%@TUNING_theme@%}">
+				<h1>@TITLE@</h1>
+				<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+				<div data-role="navbar" opt-data-iconpos="HYPERLINK_ICONPOSITION_TOP" data-iconpos="{%@HYPERLINK_ICONPOSITION_TOP@%}" tphmin="0"
+					 tphmax="1" tphlink="HYPERLINKITEMSTOP">
+					<ul>
+						<replicator tphmin="0" tphmax="-1" tphlink="HYPERLINKITEMSTOP">
+							<li>
+								<a opt-data-icon="HYPERLINK_ICON" data-icon="{%@HYPERLINK_ICON@%}"
+								   opt-data-iconpos="HYPERLINK_ICONPOSITION" data-iconpos="{%@HYPERLINK_ICONPOSITION@%}"
+								   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+								   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}"
+								   id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+								   class="@CSSCLASS@"
+								   href="@URL_NAVBAR@">@HYPERLINKITEMPRES@</a>
+							</li>
+						</replicator>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content"  data-iscroll="">
+				<img class="voTopLogo" src="@TOP_LOGO_URL@" tphmin="0" tphmax="1" tphlink="TOP_LOGO_URL" />
+				<div class="voOutput" id="titlePrompt">@PROMPT@</div>
+				<form opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}"
+					  opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+					  action="@URL_SLOTACTION@" method="@METHOD@" id="@OBJTYPE@_@OBJNAME@_form">
+					<replicator tphmin="1" tphmax="-1" tphlink="SLOTNAME">
+						<replicator tphmin="0" tphmax="1" tphlink="OPTION_STYLE">
+							<div data-role="fieldcontain">
+								<label for="@OBJTYPE@_@OBJNAME@_@FIELD@"
+									   opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+									   class="@CSSCLASS@Label">@SLOTLABEL@</label>
+								<select id="@OBJTYPE@_@OBJNAME@_@FIELD@" name="@VAR@"
+										class="@CSSCLASS@"
+										opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+										opt-title="TOOLTIP" title="{%@TOOLTIP@%}">
+									<option tphmin="1" tphmax="-1" tphlink="ITEM" value="@ITEMVALUE@"
+											opt-selected="CHECKED" selected="{%@CHECKED@%}">@ITEM@</option>
+								</select>
+							</div>
+						</replicator>
+						<replicator tphmin="0" tphmax="1" tphlink="RADIO_STYLE">
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup"
+										  opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+										  opt-data-type="TUNING_SLOT_slot_type" data-type="{%@TUNING_SLOT_slot_type@%}">
+									<legend class="@CSSCLASS@Label">@SLOTLABEL@</legend>
+									<replicator tphmin="1" tphmax="-1" tphlink="ITEM">
+										<input class="@CSSCLASS@" id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+											   name="@VAR@" type="radio" value="@ITEMVALUE@"
+											   opt-checked="CHECKED" checked="{%@CHECKED@%}" /><label opt-title="TOOLTIP" title="{%@TOOLTIP@%}"
+												  for="@OBJTYPE@_@OBJNAME@_@ITEMID@">@ITEM@</label>
+									</replicator>
+								</fieldset>
+							</div>
+						</replicator>
+						<replicator tphmin="0" tphmax="1" tphlink="CHECKBOX_STYLE">
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup"
+										  opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+										  opt-data-type="TUNING_SLOT_slot_type" data-type="{%@TUNING_SLOT_slot_type@%}">
+									<legend class="@CSSCLASS@Label">@SLOTLABEL@</legend>
+									<replicator tphmin="1" tphmax="-1" tphlink="ITEM">
+										<input class="@CSSCLASS@" id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+											   name="___@VAR@[]" type="checkbox" value="@ITEMVALUE@"
+											   opt-checked="CHECKED" checked="{%@CHECKED@%}" /><label opt-title="TOOLTIP"
+											   title="{%@TOOLTIP@%}" for="@OBJTYPE@_@OBJNAME@_@ITEMID@">@ITEM@</label>
+									</replicator>
+									<input class="@CSSCLASS@Unchecked" name="@VAR@"
+										   id="@OBJTYPE@_@OBJNAME@_@FIELD@"
+										   opt-value="ITEM_UNCHECKED_VALUE" value="{%@ITEM_UNCHECKED_VALUE@%}" type="hidden" />
+								</fieldset>
+							</div>
+						</replicator>
+						<replicator tphmin="0" tphmax="1" tphlink="MENU_STYLE">
+							<div data-role="fieldcontain">
+								<fieldset class="voInputItems" data-role="controlgroup"
+										  opt-title="TOOLTIP" title="{%@TOOLTIP@%}"
+										  opt-data-type="TUNING_SLOT_slot_type" data-type="{%@TUNING_SLOT_slot_type@%}"
+										  opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}">
+									<legend class="@CSSCLASS@Label">@SLOTLABEL@</legend>
+									<replicator tphmin="1" tphmax="-1" tphlink="ITEM">
+										<a data-role="button" class="@CSSCLASS@"
+										   id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+										   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}"
+										   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+										   href="@URL_ITEM@"><img src="@WIDGET_IMAGE@" opt-class="CSSCLASS" class="{%@CSSCLASS@%}"
+																  tphmin="0" tphmax="1" tphlink="WIDGET_IMAGE" />@ITEM@</a>
+									</replicator>
+								</fieldset>
+							</div>
+						</replicator>
+
+						<replicator tphmin="0" tphmax="1" tphlink="LIST_STYLE">
+							<replicator tphmin="0" tphmax="1" tphlink="!COLLAPSIBLE_LAYOUT_CHECK">
+								<legend class="@CSSCLASS@Label">@SLOTLABEL@</legend>
+							</replicator>
+							<div style="padding: 15px 0px;">
+								<div opt-data-role="COLLAPSIBLE_LAYOUT" data-role="{%@COLLAPSIBLE_LAYOUT@%}"
+									 opt-data-content-theme="CONTENT_THEME" data-content-theme="{%@CONTENT_THEME@%}" >
+									<replicator tphmin="0" tphmax="1" tphlink="COLLAPSIBLE_LAYOUT_CHECK">
+										<h2>@SLOTLABEL@</h2>
+									</replicator>
+									<replicator tphmin="0" tphmax="1" tphlink="!NUMBER_ITEMS">
+										<ul id="list_@OBJTYPE@_@OBJNAME@" data-role="listview" opt-data-inset="JQ_INSET" data-inset="{%@JQ_INSET@%}"
+											class="@CSSCLASS@" opt-data-filter="ENABLE_FILTERING" data-filter="{%@ENABLE_FILTERING@%}"
+											data-filter-placeholder="{%@PLACEHOLDER@%}" opt-data-autodividers="AUTODIVIDER"
+											data-autodividers="{%@AUTODIVIDER@%}">
+											<replicator tphmin="1" tphmax="-1" tphlink="ITEM">
+												<li class="@CSSCLASS@" opt-title="TOOLTIP" title="{%@TOOLTIP@%}" id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+													opt-data-role="DIVIDER" data-role="{%@DIVIDER@%}" opt-data-icon="WIDGET_ICON"
+													data-icon="{%@WIDGET_ICON@%}">
+													<a href="@URL_LISTACTION@" tphmin="0" tphmax="1" tphlink="!DIVIDER" class="@CSSCLASS@"
+													   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+													   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}">
+														<img src="@WIDGET_IMAGE@" class="{%@WIDGET_THUMBNAIL_IS_ICON@%} {%@CSSCLASS@%}"
+															 tphmin="0" tphmax="1" tphlink="WIDGET_IMAGE" />
+														<span class="ui-li-count" tphmin="0" tphmax="1" tphlink="WIDGET_BUBBLE">@WIDGET_BUBBLE@</span>
+														<p class="ui-li-aside" tphmin="0" tphmax="1" tphlink="WIDGET_ASIDE">@WIDGET_ASIDE@</p>
+														<span class="itemvalue">@ITEM@</span>
+													</a>
+													<replicator tphmin="0" tphmax="1" tphlink="DIVIDER">@ITEM@<replicator
+															tphmin="0" tphmax="1" tphlink="WIDGET_ASIDE"><p
+															class="ui-li-aside">@WIDGET_ASIDE@</p>
+													</replicator>
+														<replicator tphmin="0" tphmax="1" tphlink="WIDGET_BUBBLE">
+															<span class="ui-li-count">@WIDGET_BUBBLE@</span>
+														</replicator>
+													</replicator>
+												</li>
+											</replicator>
+										</ul>
+									</replicator>
+									<replicator tphmin="0" tphmax="1" tphlink="NUMBER_ITEMS">
+										<ol id="list_@OBJTYPE@_@OBJNAME@" data-role="listview" opt-data-inset="JQ_INSET" data-inset="{%@JQ_INSET@%}"
+											class="@CSSCLASS@" opt-data-filter="ENABLE_FILTERING" data-filter="{%@ENABLE_FILTERING@%}"
+											data-filter-placeholder="{%@PLACEHOLDER@%}" opt-data-autodividers="AUTODIVIDER"
+											data-autodividers="{%@AUTODIVIDER@%}">
+											<replicator tphmin="1" tphmax="-1" tphlink="ITEM">
+												<li class="@CSSCLASS@" opt-title="TOOLTIP" title="{%@TOOLTIP@%}" id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+													opt-data-role="DIVIDER" data-role="{%@DIVIDER@%}" opt-data-icon="WIDGET_ICON"
+													data-icon="{%@WIDGET_ICON@%}">
+													<a href="@URL_LISTACTION@" tphmin="0" tphmax="1" tphlink="!DIVIDER" class="@CSSCLASS@"
+													   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+													   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}">
+														<img src="@WIDGET_IMAGE@" opt-class="CSSCLASS" class="{%@CSSCLASS@%}"
+															 tphmin="0" tphmax="1" tphlink="WIDGET_IMAGE" />
+														<span class="itemvalue">@ITEM@</span>
+														<span class="ui-li-count" tphmin="0" tphmax="1" tphlink="WIDGET_BUBBLE">@WIDGET_BUBBLE@</span>
+														<p class="ui-li-aside" tphmin="0" tphmax="1" tphlink="WIDGET_ASIDE">@WIDGET_ASIDE@</p>
+													</a>
+													<replicator tphmin="0" tphmax="1" tphlink="DIVIDER">@ITEM@<replicator tphmin="0"
+															tphmax="1" tphlink="WIDGET_ASIDE">
+															<p class="ui-li-aside">@WIDGET_ASIDE@</p>
+														</replicator>
+														<replicator tphmin="0" tphmax="1" tphlink="WIDGET_BUBBLE">
+															<span class="ui-li-count">@WIDGET_BUBBLE@</span>
+														</replicator>
+													</replicator>
+												</li>
+											</replicator>
+										</ol>
+									</replicator>
+								</div>
+							</div>
+						</replicator>
+						<replicator tphmin="0" tphmax="1" tphlink="TEXT_STYLE">
+							<div data-role="fieldcontain">
+								<label for="@OBJTYPE@_@OBJNAME@_@FIELD@"
+									   opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+									   class="@CSSCLASS@Label">@SLOTLABEL@</label>
+								<input id="@OBJTYPE@_@OBJNAME@_@FIELD@" class="@CSSCLASS@" name="@VAR@" type="@CLIENTTYPE@"
+									   opt-value="VAR_VALUE" value="{%@VAR_VALUE@%}"
+									   opt-title="TOOLTIP" title="{%@TOOLTIP@%}"
+									   opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+									   opt-pattern="VALIDATIONPATTERN" pattern="{%@VALIDATIONPATTERN@%}"
+									   opt-placeholder="PLACEHOLDER" placeholder="{%@PLACEHOLDER@%}"
+									   opt-required="REQUIRED" required="{%@REQUIRED@%}"
+									   opt-min="MINVALUE" min="{%@MINVALUE@%}"
+									   opt-max="MAXVALUE" max="{%@MAXVALUE@%}"
+									   opt-step="STEPVALUE" step="{%@STEPVALUE@%}"
+									   opt-maxlength="MAXLENGTH" maxlength="{%@MAXLENGTH@%}" />
+							</div>
+						</replicator>
+						<replicator tphmin="0" tphmax="1" tphlink="RANGE_STYLE">
+							<div data-role="fieldcontain">
+								<label for="@OBJTYPE@_@OBJNAME@_@FIELD@"
+									   opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+									   class="@CSSCLASS@Label">@SLOTLABEL@</label>
+								<input id="@OBJTYPE@_@OBJNAME@_@FIELD@" class="@CSSCLASS@" name="@VAR@" type="range"
+									   data-highlight="true"
+									   opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+									   opt-value="VAR_VALUE" value="{%@VAR_VALUE@%}"
+									   opt-title="TOOLTIP" title="{%@TOOLTIP@%}"
+									   opt-required="REQUIRED" required="{%@REQUIRED@%}"
+									   opt-min="MINVALUE" min="{%@MINVALUE@%}"
+									   opt-max="MAXVALUE" max="{%@MAXVALUE@%}"
+									   opt-step="STEPVALUE" step="{%@STEPVALUE@%}" />
+							</div>
+						</replicator>
+						<replicator tphmin="0" tphmax="1" tphlink="SWITCH_STYLE">
+							<div data-role="fieldcontain">
+								<label for="@OBJTYPE@_@OBJNAME@_@FIELD@"
+									   opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+									   class="@CSSCLASS@Label">@SLOTLABEL@</label>
+								<select id="@OBJTYPE@_@OBJNAME@_@FIELD@" class="@CSSCLASS@" name="@VAR@" data-role="slider"
+										opt-title="TOOLTIP" title="{%@TOOLTIP@%}"
+										opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}">
+									<option tphmin="2" tphmax="2" tphlink="ITEM" value="@ITEMVALUE@"
+											id="@OBJTYPE@_@OBJNAME@_@ITEMID@" opt-selected="CHECKED" selected="{%@CHECKED@%}">@ITEM@</option>
+								</select>
+							</div>
+						</replicator>
+						<replicator tphmin="0" tphmax="1" tphlink="TEXTAREA_STYLE">
+							<div data-role="fieldcontain">
+								<label for="@OBJTYPE@_@OBJNAME@_@FIELD@"
+									   opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+									   class="@CSSCLASS@Label">@SLOTLABEL@</label>
+								<textarea id="@OBJTYPE@_@OBJNAME@_@FIELD@" class="@CSSCLASS@" name="@VAR@"
+										  opt-title="TOOLTIP" title="{%@TOOLTIP@%}"
+										  opt-data-mini="TUNING_SLOT_slot_mini" data-mini="{%@TUNING_SLOT_slot_mini@%}"
+										  opt-placeholder="PLACEHOLDER" placeholder="{%@PLACEHOLDER@%}"
+										  opt-required="REQUIRED" required="{%@REQUIRED@%}"
+										  opt-maxlength="MAXLENGTH" maxlength="{%@MAXLENGTH@%}"
+										  opt-rows="HEIGHT" rows="{%@HEIGHT@%}">{%@VAR_VALUE@%}</textarea>
+							</div>
+						</replicator>
+					</replicator>
+					<div class="voOutput" id="finalPrompt" tphmin="0" tphmax="1" tphlink="FINALPROMPT">@FINALPROMPT@</div>
+					<replicator tphmin="0" tphmax="1" tphlink="NON_MENU_STYLE_PRESENT">
+						<br />
+						<div class="voSubmit">
+							<input class="voSubmit" type="submit" value="@PROCEEDLABEL@"
+								   id="@OBJTYPE@_@OBJNAME@"
+								   opt-data-icon="PROCEEDLABEL_ICON" data-icon="{%@PROCEEDLABEL_ICON@%}"
+								   opt-data-iconpos="PROCEEDLABEL_ICONPOSITION" data-iconpos="{%@PROCEEDLABEL_ICONPOSITION@%}"
+								   opt-title="TOOLTIP" title="{%@TOOLTIP@%}"
+								   opt-data-mini="TUNING_mini" data-mini="{%@TUNING_mini@%}" />
+						</div>
+					</replicator>
+				</form>
+				<img class="voBottomLogo" src="@BOTTOM_LOGO_URL@" tphmin="0" tphmax="1" tphlink="BOTTOM_LOGO_URL" />
+			</div>
+			<script type="text/javascript">
+				$(document).on('#main','pageshow',function(event){
+				$(document).off('#main');
+				backUrl = "@URL_NAVBACK@";
+				});
+			</script>
+			
+			<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+        		<ul data-role="listview">
+            		<!-- <li data-icon="delete"><a href="#" data-rel="close">Close Menu</a></li> --><!-- CLOSE MENU -->
+					<replicator tphmin="0" tphmax="-1" tphlink="HYPERLINKITEMSBOTTOM">
+						<li opt-data-icon="HYPERLINK_ICON" data-icon="{%@HYPERLINK_ICON@%}" opt-data-iconpos="HYPERLINK_ICONPOSITION" data-iconpos="{%@HYPERLINK_ICONPOSITION@%}">
+							<a 	   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+								   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}"
+								   id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+								   class="@CSSCLASS@" 
+								   href="@URL_NAVBAR@">@HYPERLINKITEMPRES@</a>
+						</li>
+					</replicator>
+
+<li data-iconpos="right" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-theme="d" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-d"><a class="PanelHeader ui-link-inherit" data-transition="slide" href="" id="menu_LandingPageMenu_EventInfo">Follow Us</a></li>
+  <ul class="social">
+   <li class="facebook"><a href="http://www.facebook.com/pages/Aspect-Software/34156565263" class="ui-link">Facebook</a></li>
+   <li class="twitter"><a href="http://www.twitter.com/aspectsoftware" class="ui-link">Twitter</a></li>
+   <li class="rss"><a href="http://blogs.aspect.com/" class="ui-link">RSS</a></li>     
+  </ul>
+
+                </ul>
+            </div>
+			<replicator tphmin="0" tphmax="1" tphlink="GAWebPropertyID">
+				<import src="./renderTemplates/Web/GAWebJQEpilog.xml" />
+			</replicator>
+		</div>
+	</body>
+</html>
