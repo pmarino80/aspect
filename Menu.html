@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>@TITLE@</title>
+		<link rel="apple-touch-icon" href="@TUNING_AppleTouchIcon@" tphmin="0" tphmax="1" tphlink="TUNING_AppleTouchIcon" />
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script>
+			$(document).bind("mobileinit", function(){
+			if (($.mobile.defaultPageTransition = '{%@TUNING_defaultPageTransition@%}') == '')
+			$.mobile.defaultPageTransition = 'slide';
+			});
+			$(document).ready(function(){
+			var backUrl;
+			$(document).on('#main','pageshow',function(event){
+			$(document).off('#main');
+			backUrl = "@URL_NAVBACK@";
+			});
+			$( document ).bind( "pagebeforechange", function( event, data ){
+			if (typeof data.toPage == "string") {
+			if (data.toPage.substring(0,1) == "/") {
+			data.toPage = backUrl;
+			data.options.reverse=true;
+			}
+			}
+			});
+			});
+		</script>
+		<link rel="stylesheet" href="@SERVER_URL_PREFIX@Resources/System/StyleSheet/add2home.css" tphmin="0" tphmax="1" tphlink="TUNING_add2home" />
+		<script src="@SERVER_URL_PREFIX@Resources/System/Script/add2home.js" tphmin="0" tphmax="1" tphlink="TUNING_add2home"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="@STYLE_SHEET_URL@" tphmin="0" tphmax="1" tphlink="STYLE_SHEET_URL" />
+		<link rel="stylesheet" href="@TUNING_themeCSS@" tphmin="0" tphmax="1" tphlink="TUNING_themeCSS" />
+
+<!-- added to lock title -->
+<script src="http://voxeo.cloudapp.net/content/voxeo/issue1_freeze_title_bar/iscroll.js"></script>
+<script src="http://voxeo.cloudapp.net/content/voxeo/issue1_freeze_title_bar/jquery.mobile.iscrollview.js"></script>
+<link rel="stylesheet" href="http://voxeo.cloudapp.net/content/voxeo/issue1_freeze_title_bar/jquery.mobile.iscrollview.css" />
+<link rel="stylesheet" href="http://voxeo.cloudapp.net/content/voxeo/issue1_freeze_title_bar/jquery.mobile.iscrollview-pull.css" />
+<!-- -->
+
+		<replicator tphmin="0" tphmax="1" tphlink="GAWebPropertyID">
+			<import src="./renderTemplates/Web/GAWebJQProlog.xml" />
+		</replicator>
+<style type="text/css">
+i a.PanelHeader
+{
+ font-size:1.5em;background-color:white; pointer-events:none;
+ cursor:default;
+}
+</style>
+	</head>
+	<body style="overflow:hidden">
+		<div data-role="page" id="main" opt-data-theme="TUNING_theme" data-theme="{%@TUNING_theme@%}">
+			<div data-role="header" data-id="navHeaderDiv" data-position="fixed" opt-data-theme="TUNING_theme" data-theme="{%@TUNING_theme@%}">
+				<h1 tphmin="0" tphmax="1" tphlink="TITLE">@TITLE@</h1>
+<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+				<div data-role="navbar" opt-data-iconpos="HYPERLINK_ICON_TOP" data-iconpos="{%@HYPERLINK_ICONPOSITION_TOP@%}" tphmin="0" tphmax="1"
+					 tphlink="HYPERLINKITEMSTOP">
+					<ul>
+						<replicator tphmin="0" tphmax="-1" tphlink="HYPERLINKITEMSTOP">
+							<li>
+								<a opt-data-icon="HYPERLINK_ICON" data-icon="{%@HYPERLINK_ICON@%}"
+								   opt-data-iconpos="HYPERLINK_ICONPOSITION" data-iconpos="{%@HYPERLINK_ICONPOSITION@%}"
+								   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+								   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}"
+								   id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+								   class="@CSSCLASS@"
+								   href="@URL_NAVBAR@">@HYPERLINKITEMPRES@</a>
+							</li>
+						</replicator>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content" data-iscroll="">
+				<img class="voTopLogo" src="@TOP_LOGO_URL@" tphmin="0" tphmax="1" tphlink="TOP_LOGO_URL" />
+				<div class="voOutput" id="titlePrompt" tphmin="0" tphmax="1" tphlink="PROMPT">@PROMPT@</div>
+				<div opt-data-role="JQMGROUP" data-role="{%@JQMGROUP@%}"
+					 opt-data-type="JQMLAYOUT" data-type="{%@JQMLAYOUT@%}"
+					 opt-data-mini="TUNING_mini" data-mini="{%@TUNING_mini@%}"
+					 opt-class="JQMGRID" class="{%@JQMGRID@%}" id="groupDiv">
+					<!-- // START This replicator appears two times in the template. If you change this one, then change the other one, too! -->
+						<replicator tphmin="1" tphmax="-1" tphlink="MENUITEMS">
+							<a data-role="button" class="@CSSCLASS@"
+							   id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+							   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}"
+							   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+							   opt-data-icon="MENUITEM_ICON" data-icon="{%@MENUITEM_ICON@%}"
+							   opt-data-iconpos="MENUITEM_ICONPOSITION" data-iconpos="{%@MENUITEM_ICONPOSITION@%}"
+							   href="@URL_MENUITEM@" tphmin="0" tphmax="1" tphlink="!JQMBLOCK">@ITEMPRES@</a>
+						</replicator>
+					<!-- // END This replicator appears two times in the template. <hello></hello> If you change this one, then change the other one, too!-->
+
+					<!-- // START This replicator appears two times in the template. If you change this one, then change the other one, too! -->
+						<replicator tphmin="1" tphmax="-1" tphlink="MENUITEMS">
+							<div tphmin="0" tphmax="1" tphlink="JQMBLOCK" opt-class="JQMBLOCK" class="{%@JQMBLOCK@%}">
+								<a data-role="button" class="@CSSCLASS@"
+								   id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+								   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}"
+								   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+								   opt-data-icon="MENUITEM_ICON" data-icon="{%@MENUITEM_ICON@%}"
+								   opt-data-iconpos="MENUITEM_ICONPOSITION" data-iconpos="{%@MENUITEM_ICONPOSITION@%}"
+								   href="@URL_MENUITEM@">@ITEMPRES@</a>
+							</div>
+						</replicator>
+					<!-- // END This replicator appears two times in the template. If you change this one, then change the other one, too!-->
+				</div>
+				<div class="voOutput" id="finalPrompt" tphmin="0" tphmax="1" tphlink="FINALPROMPT">@FINALPROMPT@</div>
+				<img class="voBottomLogo" src="@BOTTOM_LOGO_URL@" tphmin="0" tphmax="1" tphlink="BOTTOM_LOGO_URL" />
+			</div>
+
+
+<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+ <ul data-role="listview">
+ <!-- <li data-icon="delete"><a href="#" data-rel="close">Close Menu</a></li> --><!-- CLOSE MENU -->
+ <replicator tphmin="0" tphmax="-1" tphlink="HYPERLINKITEMSBOTTOM">
+ <li opt-data-icon="HYPERLINK_ICON" data-icon="{%@HYPERLINK_ICON@%}" opt-data-iconpos="HYPERLINK_ICONPOSITION" data-iconpos="{%@HYPERLINK_ICONPOSITION@%}">
+ <a 	   opt-data-direction="PAGETRANSITIONDIRECTION" data-direction="{%@PAGETRANSITIONDIRECTION@%}"
+								   opt-data-transition="PAGETRANSITIONSTYLE" data-transition="{%@PAGETRANSITIONSTYLE@%}"
+								   id="@OBJTYPE@_@OBJNAME@_@ITEMID@"
+								   class="@CSSCLASS@"
+								   href="@URL_NAVBAR@">@HYPERLINKITEMPRES@</a>
+							</li>
+</replicator>
+
+
+
+<li data-iconpos="right" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-theme="d" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-d"><a class="PanelHeader ui-link-inherit" data-transition="slide" href="" id="menu_LandingPageMenu_EventInfo">Follow Us</a></li>
+
+
+
+
+  <ul class="social">
+   <li class="facebook"><a href="http://www.facebook.com/pages/Aspect-Software/34156565263" class="ui-link">Facebook</a></li>
+   <li class="twitter"><a href="http://www.twitter.com/aspectsoftware" class="ui-link">Twitter</a></li>
+   <li class="rss"><a href="http://blogs.aspect.com/" class="ui-link">RSS</a></li>     
+  </ul>
+
+</ul>
+</div>
+			<replicator tphmin="0" tphmax="1" tphlink="GAWebPropertyID">
+				<import src="./renderTemplates/Web/GAWebJQEpilog.xml" />
+			</replicator>
+		</div>
+	</body>
+</html>
