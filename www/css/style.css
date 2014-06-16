@@ -4,6 +4,15 @@ body {
   cursor: url('http://ionicframework.com/img/finger.png'), auto;
 }
 
+h1 {
+	font-size: 18px !important;
+}
+
+h4 {
+	color: #4D4D4D;
+	margin-bottom: 0px !important;
+}
+
 .wide-as-needed {
   white-space: nowrap;
   /*  overflow-x: scroll; /*
@@ -17,3 +26,45 @@ body {
 	font-size: 18px;
 	color: black;
 }
+
+.triangles {
+	background: url(../img/triangles.png);
+	height: 0px;
+	margin-bottom: 0px;
+}
+
+/*.scroll-content {
+	background: #F2F0EC;
+	padding-top: 10px;
+}*/
+
+.bar-assertive {
+	background: transparent url(../img/triangles.png) !important;
+	border: none !important;
+	margin-bottom: 0px !important;
+}
+
+
+.list {
+	padding-top: 0px;
+}
+
+/*.dark-menu {
+  background-color: #4D4D4D !important;
+  color: #ffffff;
+}*/
+
+.side-styles .item {
+         font-weight: 500;
+}
+
+/*Changes the border for the last item*!/
+.dark-menu .item:last-child {
+  border-bottom: 1px solid #474343;
+}
+
+/*Ion-item adds item-complex and an inner div, .item-content*!/
+/* this needs to be transparent too, but doesnt need borders*!/
+.dark-menu .item-complex .item-content, .mymenu .item-radio .item-content {
+  background-color: transparent;
+}*/
