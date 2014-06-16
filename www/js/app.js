@@ -148,6 +148,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.profile-details', {
+      url: "/profile/profile-details",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/profile-details.html"
+        }
+      }
+    })
+
     .state('app.magazines', {
       url: "/magazines",
       views: {
