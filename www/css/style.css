@@ -27,6 +27,17 @@ h4 {
 	color: black;
 }
 
+.club-logo {
+	background: url(../img/reading-club.png);
+	height: 43px;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.tagline {
+	text-wrap: unrestricted;
+}
+
 .triangles {
 	background: url(../img/triangles.png);
 	height: 0px;
