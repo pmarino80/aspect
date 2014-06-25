@@ -33,6 +33,19 @@ h4 {
 	margin-bottom: 0px;
 }
 
+.due-date {
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	padding-left: 8px;
+}
+
+.item-input input {
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold; 
+}
+
 /*.scroll-content {
 	background: #F2F0EC;
 	padding-top: 10px;

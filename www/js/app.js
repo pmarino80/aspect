@@ -121,6 +121,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.backorders', {
+      url: "/reading-club/manage-orders/backorders",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/backorders.html"
+        }
+      }
+    })
+
     .state('app.wishlist', {
       url: "/reading-club/wishlist",
       views: {
