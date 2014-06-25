@@ -184,6 +184,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.sccg', {
+      url: "/sccg",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/sccg.html"
+        }
+      }
+    })
+
+    .state('app.order-forms', {
+      url: "/sccg/order-forms",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/order-forms.html"
+        }
+      }
+    })
+
     .state('app.playlists', {
       url: "/playlists",
       views: {
