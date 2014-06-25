@@ -130,6 +130,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.offers', {
+      url: "/reading-club/offers",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/offers.html"
+        }
+      }
+    })
+
     .state('app.wishlist', {
       url: "/reading-club/wishlist",
       views: {
