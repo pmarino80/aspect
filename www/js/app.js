@@ -58,6 +58,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.reviews', {
+      url: "/lounge/reviews",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/reviews.html"
+        }
+      }
+    })
+
     .state('app.reading-club', {
       url: "/reading-club",
       views: {

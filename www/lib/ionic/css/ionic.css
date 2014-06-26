@@ -1597,6 +1597,10 @@
 
 .ion-star:before {
   content: "\f24e"; }
+  
+.ion-ios7-star-half:before { content: "\f33a"; }
+
+.ion-ios7-star-outline:before { content: "\f1df"; }
 
 .ion-stats-bars:before {
   content: "\f2b5"; }
@@ -4001,7 +4005,9 @@ a.item-content {
  * Split Pane
  * --------------------------------------------------
  */
-.split-pane {
+ 
+ 
+ .split-pane {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
