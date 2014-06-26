@@ -82,6 +82,20 @@ h4 {
          font-weight: 500;
 }
 
+.cover	{
+	width: 100%;
+	height: 198px;
+	text-align: center;
+	align-content: center;
+}
+
+.cover img {
+	width: 130px;
+	height:163px;
+	align-content: center;
+	text-align: center;
+}
+
 /*Changes the border for the last item*!/
 .dark-menu .item:last-child {
   border-bottom: 1px solid #474343;
