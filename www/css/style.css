@@ -108,6 +108,21 @@ h4 {
     padding-top: 20px;
 }
 
+div.flyers.honeybee {
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #F8B552),
+		color-stop(1, #F8A751)
+	);
+	background-image: -o-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
+	background-image: -moz-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
+	background-image: -webkit-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
+	background-image: -ms-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
+	background-image: linear-gradient(to bottom, #F8B552 0%, #F8A751 100%);
+}
+
 div.flyers.honeybee img {
 	padding-top: 0px;
 }
