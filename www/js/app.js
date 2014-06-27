@@ -112,6 +112,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.lucky', {
+      url: "/reading-club/lucky",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/lucky.html"
+        }
+      }
+    })
+
     .state('app.pending-details', {
       url: "/reading-club/pending/pending-details",
       views: {
