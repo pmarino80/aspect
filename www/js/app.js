@@ -121,6 +121,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.arrow', {
+      url: "/reading-club/arrow",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/arrow.html"
+        }
+      }
+    })
+
     .state('app.pending-details', {
       url: "/reading-club/pending/pending-details",
       views: {
