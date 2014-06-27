@@ -5200,7 +5200,7 @@ a.button {
   .button-bar > .button:first-child {
     border-radius: 0px 0px 0px 0px; }
   .button-bar > .button:last-child {
-    border-right-width: 0px;
+    border-right-width: 1px;
     border-radius: 0px 0px 0px 0px; }
 
 /**
