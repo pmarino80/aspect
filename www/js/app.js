@@ -103,6 +103,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.seesaw', {
+      url: "/reading-club/seesaw",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/seesaw.html"
+        }
+      }
+    })
+
     .state('app.pending-details', {
       url: "/reading-club/pending/pending-details",
       views: {

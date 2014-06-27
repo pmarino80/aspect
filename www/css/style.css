@@ -123,6 +123,10 @@ div.flyers.honeybee {
 	background-image: linear-gradient(to bottom, #F8B552 0%, #F8A751 100%);
 }
 
+div.pager-white.slider .slider-pager .slider-pager-page {
+	color: white !important;
+}
+
 div.flyers.honeybee img {
 	padding-top: 0px;
 }
