@@ -1,0 +1,142 @@
+/* Empty. Add your own CSS if you like */
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+h1 {
+	font-size: 18px !important;
+}
+
+h4 {
+	color: #4D4D4D;
+	margin-bottom: 0px !important;
+}
+
+.wide-as-needed {
+  white-space: nowrap;
+  /*  overflow-x: scroll; /*
+  /*  -webkit-overflow-scrolling: touch;  */
+}
+.scroll { 
+  min-width: 100%;
+}
+
+.item-note {
+	font-size: 18px;
+	color: black;
+}
+
+.club-logo {
+	background: url(../img/reading-club.png);
+	height: 43px;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.tagline {
+	text-wrap: unrestricted;
+}
+
+.triangles {
+	background: url(../img/triangles.png);
+	height: 0px;
+	margin-bottom: 0px;
+}
+
+.due-date {
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	padding-left: 8px;
+}
+
+.item-input input {
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold; 
+}
+
+/*.scroll-content {
+	background: #F2F0EC;
+	padding-top: 10px;
+}*/
+
+.bar-assertive {
+	background: #F20017;
+	border: none !important;
+	margin-bottom: 0px !important;
+}
+
+
+.list {
+	padding-top: 0px;
+}
+
+/*.dark-menu {
+  background-color: #4D4D4D !important;
+  color: #ffffff;
+}*/
+
+.side-styles .item {
+         font-weight: 500;
+}
+
+.cover	{
+	width: 100%;
+	height: 198px;
+	text-align: center;
+	align-content: center;
+}
+
+.cover img {
+	width: 130px;
+	height:163px;
+	align-content: center;
+	text-align: center;
+}
+
+.flyers {
+	width: 100%;
+	height: 130px;
+}
+
+.flyers img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+div.flyers.honeybee {
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #F8B552),
+		color-stop(1, #F8A751)
+	);
+	background-image: -o-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
+	background-image: -moz-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
+	background-image: -webkit-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
+	background-image: -ms-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
+	background-image: linear-gradient(to bottom, #F8B552 0%, #F8A751 100%);
+}
+
+div.flyers.honeybee img {
+	padding-top: 0px;
+}
+
+div.flyers.firefly img {
+	padding-top: 8px;
+}
+/*Changes the border for the last item*!/
+.dark-menu .item:last-child {
+  border-bottom: 1px solid #474343;
+}
+
+/*Ion-item adds item-complex and an inner div, .item-content*!/
+/* this needs to be transparent too, but doesnt need borders*!/
+.dark-menu .item-complex .item-content, .mymenu .item-radio .item-content {
+  background-color: transparent;
+}*/
