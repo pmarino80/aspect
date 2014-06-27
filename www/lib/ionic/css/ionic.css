@@ -3992,7 +3992,7 @@ a.item-content {
     display: inline-block;
     margin: 0px 3px;
     width: 15px;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     opacity: 0.3; }
     .slider-pager .slider-pager-page.active {
@@ -5198,10 +5198,10 @@ a.button {
   .button-bar > .button:before, .button-bar > .button .icon:before {
     line-height: 44px; }
   .button-bar > .button:first-child {
-    border-radius: 2px 0px 0px 2px; }
+    border-radius: 0px 0px 0px 0px; }
   .button-bar > .button:last-child {
-    border-right-width: 1px;
-    border-radius: 0px 2px 2px 0px; }
+    border-right-width: 0px;
+    border-radius: 0px 0px 0px 0px; }
 
 /**
  * Animations
