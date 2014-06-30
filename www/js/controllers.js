@@ -25,3 +25,14 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
+
+.controller('FaqCtrl', function($scope, FaqService) {
+  $scope.faqs = FaqService.all();
+})
+
+.controller('FaqDetailCtrl', function($scope, $stateParams, FaqService) {
+  $scope.faq = FaqService.get($stateParams.faqId);
+});
+
+
+
