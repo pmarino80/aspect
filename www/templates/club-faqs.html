@@ -5,10 +5,13 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <div class="list">
-   		<ion-item class="item-icon-right" ng-repeat="faq in faqs" href="#/app/reading-club/club-faqs/{{faq.id}}">
+   		<ion-item class="item-icon-right item-text-wrap" ng-repeat="faq in faqs" href="#/app/reading-club/club-faqs/{{faq.id}}">
    			<h2>{{faq.title}}</h2>
    			<i class="icon ion-chevron-right icon-accessory"></i></ion-item>
 		</ion-item>
+		<a class="button button-full button-stable text-center" href="http://clubsonline.custhelp.com" target="_blank">
+		  <strong>View All FAQs</strong>
+		</a>
     </div>
   </ion-content>
 </ion-view>
