@@ -272,7 +272,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       views: {
         'menuContent' :{
           templateUrl: "templates/shipping.html",
-		  controller: 'MainCtrl'
+		  controller: 'CartForm'
         }
       }
     })

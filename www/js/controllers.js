@@ -34,25 +34,23 @@ angular.module('starter.controllers', [])
   $scope.faq = FaqService.get($stateParams.faqId);
 })
 
-.controller('MainCtrl', function($scope, $location) {
-  $scope.tip = 20;
-  $scope.people = 1;
-  $scope.amount = 100;
+.controller('CartForm', function($scope) {
+	$scope.invoice = {
+	        items: [{
+	            ordtotal: 0.00,
+	            description: 'Book Order',
+				stdcost: 5.99,
+				onecost: 14.99,
+	            cost: 11.99}]
+	    };
 
-  // tipper
-  $scope.updateTip = function() {
-    $scope.tipAmount = $scope.amount * $scope.tip/100;
-    $scope.total = $scope.amount + $scope.tipAmount;
-    $scope.costPerPerson = $scope.total / $scope.people;
-  };
-
-  // bill splitter
-  $scope.splitBill = false;
-
-  $scope.toggleSplitBill = function() {
-    $scope.splitBill = $scope.splitBill === false ? true : false;
-  };
-
+	    $scope.total = function() {
+	        var total = 0;
+	        angular.forEach($scope.invoice.items, function(item) {
+	            total += item.ordtotal * item.cost;
+	        })
+	        return total;
+	    }
 });
 
 
