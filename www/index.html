@@ -28,6 +28,22 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
 	<script src="js/services.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+	    if (window.devicePixelRatio > 1) {
+	        var lowresImages = $('img');
+
+	        images.each(function(i) {
+	            var lowres = $(this).attr('src');
+	            var highres = lowres.replace(".", "@2x.");
+	            $(this).attr('src', highres);
+	        });
+	    }
+	});
+	</script>
+	
     <!-- <script type="text/javascript" src="http://fast.fonts.net/jsapi/d59c0a61-be24-4c78-83cc-a64dcbfac9cb.js"></script> -->
   </head>
 
