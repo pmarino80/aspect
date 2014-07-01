@@ -139,6 +139,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
+    .state('app.pending-details-2', {
+      url: "/reading-club/pending/pending-details-2",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/pending-details-2.html"
+        }
+      }
+    })
+
     .state('app.manage-orders', {
       url: "/reading-club/manage-orders",
       views: {
@@ -273,6 +282,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
         'menuContent' :{
           templateUrl: "templates/shipping.html",
 		  controller: 'CartForm'
+        }
+      }
+    })
+
+    .state('app.programs', {
+      url: "/sccg/programs",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/programs.html"
         }
       }
     })
