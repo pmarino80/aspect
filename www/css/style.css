@@ -34,6 +34,13 @@ h4 {
 	margin: 0 auto;
 }
 
+.sccg-logo {
+	background: url(../img/sccg-logo.png);
+	height: 72px;
+	width: 293px;
+	margin: 0 auto;
+}
+
 .tagline {
 	text-wrap: unrestricted;
 }

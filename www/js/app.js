@@ -313,6 +313,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
+    .state('app.sccg-contact', {
+      url: "/sccg/sccg-contact",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/sccg-contact.html"
+        }
+      }
+    })
+
     .state('app.playlists', {
       url: "/playlists",
       views: {
