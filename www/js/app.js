@@ -267,6 +267,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
+    .state('app.subscriptions', {
+      url: "/magazines/subscriptions",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/subscriptions.html"
+        }
+      }
+    })
+
     .state('app.sccg', {
       url: "/sccg",
       views: {
