@@ -25,3 +25,33 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
+
+.controller('FaqCtrl', function($scope, FaqService) {
+  $scope.faqs = FaqService.all();
+})
+
+.controller('FaqDetailCtrl', function($scope, $stateParams, FaqService) {
+  $scope.faq = FaqService.get($stateParams.faqId);
+})
+
+.controller('CartForm', function($scope) {
+	$scope.invoice = {
+	        items: [{
+	            ordtotal: 0.00,
+	            description: 'Book Order',
+				stdcost: 5.99,
+				onecost: 14.99,
+	            cost: 11.99}]
+	    };
+
+	    $scope.total = function() {
+	        var total = 0;
+	        angular.forEach($scope.invoice.items, function(item) {
+	            total += item.ordtotal * item.cost;
+	        })
+	        return total;
+	    }
+});
+
+
+

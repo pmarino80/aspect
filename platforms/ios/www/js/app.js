@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -58,6 +58,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.bookfairs', {
+      url: "/bookfairs",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/bookfairs.html"
+        }
+      }
+    })
+
     .state('app.reviews', {
       url: "/lounge/reviews",
       views: {
@@ -103,11 +112,47 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.seesaw', {
+      url: "/reading-club/seesaw",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/seesaw.html"
+        }
+      }
+    })
+
+    .state('app.lucky', {
+      url: "/reading-club/lucky",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/lucky.html"
+        }
+      }
+    })
+
+    .state('app.arrow', {
+      url: "/reading-club/arrow",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/arrow.html"
+        }
+      }
+    })
+
     .state('app.pending-details', {
       url: "/reading-club/pending/pending-details",
       views: {
         'menuContent' :{
           templateUrl: "templates/pending-details.html"
+        }
+      }
+    })
+
+    .state('app.pending-details-2', {
+      url: "/reading-club/pending/pending-details-2",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/pending-details-2.html"
         }
       }
     })
@@ -188,7 +233,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/reading-club/club-faqs",
       views: {
         'menuContent' :{
-          templateUrl: "templates/club-faqs.html"
+          templateUrl: "templates/club-faqs.html",
+		  controller: 'FaqCtrl'
+        }
+      }
+    })
+
+    .state('app.club-faq', {
+      url: "/reading-club/club-faqs/:faqId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/club-faq.html",
+          controller: 'FaqDetailCtrl'
         }
       }
     })
@@ -211,6 +267,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.magazine-products', {
+      url: "/magazines/magazine-products",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/magazine-products.html"
+        }
+      }
+    })
+
+    .state('app.subscriptions', {
+      url: "/magazines/subscriptions",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/subscriptions.html"
+        }
+      }
+    })
+
     .state('app.sccg', {
       url: "/sccg",
       views: {
@@ -225,6 +299,52 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent' :{
           templateUrl: "templates/order-forms.html"
+        }
+      }
+    })
+
+    .state('app.shipping', {
+      url: "/sccg/shipping",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/shipping.html",
+		  controller: 'CartForm'
+        }
+      }
+    })
+
+    .state('app.programs', {
+      url: "/sccg/programs",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/programs.html"
+        }
+      }
+    })
+
+    .state('app.resources', {
+      url: "/sccg/resources",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/resources.html"
+        }
+      }
+    })
+
+    .state('app.products', {
+      url: "/sccg/products",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/products.html"
+        }
+      }
+    })
+
+    .state('app.sccg-contact', {
+      url: "/sccg/sccg-contact",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/sccg-contact.html"
         }
       }
     })

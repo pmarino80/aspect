@@ -34,6 +34,13 @@ h4 {
 	margin: 0 auto;
 }
 
+.sccg-logo {
+	background: url(../img/sccg-logo.png);
+	height: 72px;
+	width: 293px;
+	margin: 0 auto;
+}
+
 .tagline {
 	text-wrap: unrestricted;
 }
@@ -69,9 +76,9 @@ h4 {
 }
 
 
-.list {
+/*.list {
 	padding-top: 0px;
-}
+}*/
 
 /*.dark-menu {
   background-color: #4D4D4D !important;
@@ -121,6 +128,28 @@ div.flyers.honeybee {
 	background-image: -webkit-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
 	background-image: -ms-linear-gradient(bottom, #F8B552 0%, #F8A751 100%);
 	background-image: linear-gradient(to bottom, #F8B552 0%, #F8A751 100%);
+}
+
+div.pager-white.slider .slider-pager .slider-pager-page {
+	color: white !important;
+}
+
+div.pager-none.slider .slider-pager .slider-pager-page {
+	display: none !important;
+}
+
+div.fairs {
+	width: 100%;
+	height: 150px;
+	margin-top: 0px;
+}
+
+.fairs img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0px;
+    z-index: 500;
 }
 
 div.flyers.honeybee img {

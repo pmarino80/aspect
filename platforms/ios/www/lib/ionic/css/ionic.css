@@ -3913,9 +3913,9 @@ a.item-content {
   color: #AAAAAA;
   z-index: 1;
   display: inline-block;
-  padding: 3px 8px;
+  padding: 4px 8px;
   min-width: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   vertical-align: baseline;
   text-align: center;
   white-space: nowrap;
@@ -3938,7 +3938,7 @@ a.item-content {
   background-color: #43cee6;
   color: #fff; }
 .tabs .tab-item .badge.badge-assertive, .badge.badge-assertive {
-  background-color: #ef4e3a;
+  background-color: #F00C25;
   color: #fff; }
 .tabs .tab-item .badge.badge-balanced, .badge.badge-balanced {
   background-color: #66cc33;
@@ -3983,7 +3983,7 @@ a.item-content {
 
 .slider-pager {
   position: absolute;
-  bottom: 20px;
+  bottom: 12px;
   z-index: 1;
   width: 100%;
   height: 15px;
@@ -5198,10 +5198,10 @@ a.button {
   .button-bar > .button:before, .button-bar > .button .icon:before {
     line-height: 44px; }
   .button-bar > .button:first-child {
-    border-radius: 2px 0px 0px 2px; }
+    border-radius: 0px 0px 0px 0px; }
   .button-bar > .button:last-child {
     border-right-width: 1px;
-    border-radius: 0px 2px 2px 0px; }
+    border-radius: 0px 0px 0px 0px; }
 
 /**
  * Animations
