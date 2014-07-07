@@ -130,6 +130,15 @@ div.flyers.honeybee {
 	background-image: linear-gradient(to bottom, #F8B552 0%, #F8A751 100%);
 }
 
+div.flyers.system-44 {
+	background: url(../img/44-bg.png) 0 0 repeat-x;
+}
+
+div.flyers.math-180 {
+	background: url(../img/math-bg.png) 0 0 repeat-x;
+}
+
+
 div.pager-white.slider .slider-pager .slider-pager-page {
 	color: white !important;
 }
