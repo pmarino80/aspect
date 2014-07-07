@@ -76,6 +76,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
+    .state('app.contact', {
+      url: "/contact",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/contact.html"
+        }
+      }
+    })
+
     .state('app.education-tech', {
       url: "/education-tech",
       views: {
