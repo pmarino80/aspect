@@ -76,6 +76,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
+    .state('app.tech-products', {
+      url: "/education-tech/tech-products",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/tech-products.html"
+        }
+      }
+    })
+
     .state('app.reviews', {
       url: "/lounge/reviews",
       views: {
