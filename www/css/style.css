@@ -168,6 +168,21 @@ div.flyers.honeybee img {
 div.flyers.firefly img {
 	padding-top: 8px;
 }
+
+div.about-top {
+	background: #B29B8F url(../img/about-bg.png) top right no-repeat;
+	height: 120px;
+	width: 100%;
+}
+
+div.about-top img {
+	height: 100%;
+	width: 100%;
+}
+
+div.about-txt {
+	font-size: 40px;
+}
 /*Changes the border for the last item*!/
 .dark-menu .item:last-child {
   border-bottom: 1px solid #474343;
