@@ -67,6 +67,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
+    .state('app.bookfairs-contact', {
+      url: "/bookfairs/bookfairs-contact",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/bookfairs-contact.html"
+        }
+      }
+    })
+
     .state('app.about', {
       url: "/about",
       views: {
@@ -99,6 +108,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       views: {
         'menuContent' :{
           templateUrl: "templates/tech-products.html"
+        }
+      }
+    })
+
+    .state('app.tech-contact', {
+      url: "/education-tech/tech-contact",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/tech-contact.html"
         }
       }
     })
@@ -308,6 +326,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       views: {
         'menuContent' :{
           templateUrl: "templates/magazine-products.html"
+        }
+      }
+    })
+
+
+    .state('app.magazine-contact', {
+      url: "/magazines/magazine-contact",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/magazine-contact.html"
         }
       }
     })

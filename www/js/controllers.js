@@ -39,9 +39,9 @@ angular.module('starter.controllers', [])
 	        items: [{
 	            ordtotal: 0.00,
 	            description: 'Book Order',
-				stdcost: 5.99,
-				onecost: 14.99,
-	            cost: 11.99}]
+				stdcost: 1.09,
+				onecost: 1.14,
+	            cost: 1.14}]
 	    };
 
 	    $scope.total = function() {

@@ -34,6 +34,13 @@ h4 {
 	margin: 0 auto;
 }
 
+.bookfairs-logo {
+	background: url(../img/bookfairs-logo.png);
+	height: 43px;
+	width: 218px;
+	margin: 0 auto;
+}
+
 .sccg-logo {
 	background: url(../img/sccg-logo.png);
 	height: 72px;
@@ -62,7 +69,6 @@ h4 {
 	font-size: 16px;
 	font-weight: normal;
 	color: black;
-	padding-left: 8px;
 }
 
 .item-input input {
