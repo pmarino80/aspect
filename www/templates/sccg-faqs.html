@@ -1,0 +1,17 @@
+<ion-view title="FAQs">
+  <ion-nav-buttons side="right">
+<!--    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
+<!--<button class="button">Edit</button>-->
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <div class="list">
+   		<ion-item class="item-icon-right item-text-wrap" ng-repeat="faq in faqs" href="#/app/sccg/sccg-faqs/{{faq.id}}">
+   			{{faq.title}}
+   			<i class="icon ion-chevron-right icon-accessory"></i></ion-item>
+		</ion-item>
+		<a class="button button-full button-stable text-center" href="http://www.scholastic.com/custsupport/" target="_blank">
+		  <strong>View All FAQs</strong>
+		</a>
+    </div>
+  </ion-content>
+</ion-view>

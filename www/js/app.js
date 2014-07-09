@@ -303,7 +303,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
-
     .state('app.magazine-faqs', {
       url: "/magazines/magazine-faqs",
       views: {
@@ -320,6 +319,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
         'menuContent' :{
           templateUrl: "templates/magazine-faq.html",
           controller: 'MagFaqDetailCtrl'
+        }
+      }
+    })
+
+    .state('app.sccg-faqs', {
+      url: "/sccg/sccg-faqs",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/sccg-faqs.html",
+		  controller: 'SCCGFaqCtrl'
+        }
+      }
+    })
+
+    .state('app.sccg-faq', {
+      url: "/sccg/sccg-faqs/:faqId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/sccg-faq.html",
+          controller: 'SCCGFaqDetailCtrl'
         }
       }
     })

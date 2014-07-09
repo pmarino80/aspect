@@ -44,4 +44,25 @@ angular.module('starter.services', [])
       return faqs[faqId];
     }
   }
+})
+
+.factory('SCCGFaqService', function() {
+
+  var faqs = [
+		{ id: 0, title: 'What is the difference between The Teacher Store and The Scholastic Store Online?', detail: 'The Teacher Store is for professional educators only. We are able to offer you special discounts and sales on books, software, curriculum programs, and teaching resources -- and you can pay by purchase order. The Scholastic Store Online sells to all customers, providing the best selection of books, toys, games, and software as well as arts-and-crafts kits for fun learning.' }, 
+		{ id: 1, title: 'Ordering by Fax or Mail', detail: 'Currently, The Teacher Store accepts only Printed Purchase Orders (POs) via fax or mail. All other credit card orders and Purchase Orders should be submitted via our online store. ' },
+		{ id: 2, title: 'Shipping to an address other than school?', detail: 'Yes. If you are a teacher and have an established Reading Club account at your school, you may call Customer Service at 1-800-724-6527 to place your order and arrange to have it shipped to a different address.\n\nAddresses cannot be changed once an order has been placed, nor can addresses be changed online.\n\nCustomer Service hours are: Monday - Friday from 6AM-11PM CST, and Saturdays from 8AM-5PM. Military personnel and U.S. Territory residents, call: 1 (573) 632-1632.' },
+		{ id: 3, title: 'Aspiring Authors Wishing to Submit Manuscripts', detail: 'We’re sorry. Scholastic and most other childrens book publishers do not accept unsolicited manuscripts. Most works are submitted by literary agents or are created under a contract.\n\nOur Editorial Department suggests that you may want to consult the current issue of the Children’s Writer’s & Illustrator’s Market. It retails in the $20.00 range and should be available at most public libraries. They feel this book is helpful for aspiring childrens writers.\n\nWe wish you success in your writing endeavors and hope this information is helpful.' }, 
+		{ id: 4, title: 'Submitting manuscripts for teaching ideas', detail: 'We welcome professional manuscript submissions from all educators. Acceptance of proposals is based on originality of ideas, usefulness to educators working in mainstream settings, market need, and fit with the directions and goals of Scholastic Professional Books.' }
+  ];
+
+  return {
+    all: function() {
+      return faqs;
+    },
+    get: function(faqId) {
+      
+      return faqs[faqId];
+    }
+  }
 });
