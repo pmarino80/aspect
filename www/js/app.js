@@ -229,6 +229,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
+    .state('app.order-details-2', {
+      url: "/reading-club/manage-orders/order-details-2",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/order-details-2.html"
+        }
+      }
+    })
+
     .state('app.review-order', {
       url: "/reading-club/review-order",
       views: {
