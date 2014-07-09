@@ -303,6 +303,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services' ])
       }
     })
 
+
+    .state('app.magazine-faqs', {
+      url: "/magazines/magazine-faqs",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/magazine-faqs.html",
+		  controller: 'MagFaqCtrl'
+        }
+      }
+    })
+
+    .state('app.magazine-faq', {
+      url: "/magazines/magazine-faqs/:faqId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/magazine-faq.html",
+          controller: 'MagFaqDetailCtrl'
+        }
+      }
+    })
+
     .state('app.profile-details', {
       url: "/profile/profile-details",
       views: {

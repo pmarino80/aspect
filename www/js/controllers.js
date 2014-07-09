@@ -34,6 +34,14 @@ angular.module('starter.controllers', [])
   $scope.faq = FaqService.get($stateParams.faqId);
 })
 
+.controller('MagFaqCtrl', function($scope, MagFaqService) {
+  $scope.faqs = MagFaqService.all();
+})
+
+.controller('MagFaqDetailCtrl', function($scope, $stateParams, MagFaqService) {
+  $scope.faq = MagFaqService.get($stateParams.faqId);
+})
+
 .controller('CartForm', function($scope) {
 	$scope.invoice = {
 	        items: [{

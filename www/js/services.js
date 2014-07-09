@@ -1,9 +1,7 @@
 angular.module('starter.services', [])
 
 .factory('FaqService', function() {
-  // Might use a resource here that returns a JSON array
- 
-  // Some fake testing data
+
   var faqs = [
 		{ id: 0, title: 'How do teachers redeem online the coupons and promotional rewards they have earned?', detail: 'Sign in to your Scholastic Reading Club ordering site, if you have not already done so. From the top of your homepage, click the Redeem Coupons button, (highlighted in the graphic below). You will be brought to the Coupons and Rewards page.\n\nIf you have a valid coupon, enter the code into the field provided (Enter Coupon Code) and click the Redeem button. If the coupon code is recognized you will get the message You have successfully applied this promotion and the coupon name/number will appear below it. All of your rewards earned, and coupons whose codes you have entered to redeem, will be listed.' }, 
 		{ id: 1, title: 'How do I make a payment?', detail: 'To Make a Payment Online:\nYou must be registered and signed in to with Scholastic.com to make a payment online. You may pay by credit/debit card. (Scholastic accepts Visa, MasterCard, American Express, and Discover cards.)\n\nIf you are in the process of placing an online order with Scholastic Reading Club, once you click to Proceed to Checkout, "Shipping & Payment" is the second step of the 3-step checkout process and where you will input your method of payment.\n\nIf you want to make payment for an order that you have already submitted:\n\nSign in to either Scholastic.com or Scholastic Reading Club.\nClick "Your Account" on the upper right hand corner of the page. A window with your account information will open.\nThen select the "Billing & Payments" tab and click the "Make a Payment" button to pay using your credit or debit card.\n\nTo Make a Payment by Phone:\nYou may pay by credit/debit card. (Scholastic accepts Visa, MasterCard, American Express, and Discover cards.) Call Customer Service at 1-800-Scholastic (1-800-724-6527). We will be happy to help you with your payment.' },
@@ -14,6 +12,27 @@ angular.module('starter.services', [])
 		{ id: 6, title: 'How do teachers place classroom orders online?', detail: 'Once you are registered for Scholastic Reading Club your Parent Ordering site will automatically be set up. (See How do I set up parent online ordering? for more details.)\n\nAll you need to do to enable parents to order online is provide them with your Class Activation Code, which they will need to register, and the parent ordering Web site address - both of which will be clearly accessible to you on your Reading Club ordering homepage.\n\nThen, when a parent places an order online:\nYou will receive an e-mail notification of their order.\nTheir payment is sent directly to Scholastic\nTheir selections are automatically added to your cart and will remain there until you are ready to submit your full class order for processing. (Tip: submit all orders during an order session together, to maximize your Bonus Point rewards.)\n\nIf you only have parent online orders, and have not received any paper order forms from students:\nClick the shopping cart button in the top-right corner of your homepage, and follow the steps to Check Out.\n\nPlease note: Since parents online orders are paid for with credit cards directly to Scholastic, you do not need to make a payment. On the Shipping and Payment page, select "Checks by Mail Only," and rest assured that your orders that contain parent online orders only will be completely paid in full by the parents and no further payment action is needed.' }, 
 		{ id: 7, title: 'How do I change or update my school information?', detail: 'To change or update your school information:\nSign In to Scholastic Reading Clubs ordering site.\nClick "Your Account" on the upper right hand corner of the page. A window with your information will appear.\nTo change your school name or address, click the tab labeled "Addresses," and on that page click "Edit" next to your school address.\nYou will be asked your reason for the change. Select "I am teaching at a different school," and click "Continue." You will then fill in your new school information and click "Continue"\nTo change the grade or number of students you teach, click the tab labeled "My Profile," then click "Edit" next to the information you need to change. Once you have edited the information, do not forget to click the "Save" button.\n\nIf you are changing your school, you must do this before you place your order as you will be given a new Scholastic Reading Club Customer Number.\n\nIf you have changed schools, we will assign you a new customer number and give you the same number of Bonus Points as were in your previous Reading Club account to use at your new school.\n\nIf you have not yet registered to use our online order system, but are an existing Reading Club customer, please call 1-800-Scholastic (1-800-724-6527), press #5 to speak to a Customer Service Representative and let us know of your move.' }, 
 		{ id: 8, title: 'How can I find my Scholastic customer number?', detail: 'For your convenience, your 10-digit customer number may be found in several places:\n\n1. On the back cover of your Scholastic Reading Club monthly catalog, just above your name and address.\n2. On your Reading Club order packing slip.\n3. In your online account. If you are registered with Scholastic Reading Club online, sign in and click "Your Account" in the upper right-hand corner of the page. Choose the "My Profile" tab and your current customer number will be listed beneath your name.\n\nIf you still are having difficulty finding your Scholastic customer number, please call Customer Service at 1-800-724-6527.\n\nNote:\nYou do not need your Scholastic customer number to place an order with Scholastic Reading Club online.\nYou do need your Scholastic customer number to place an order by mail or by phone.' }
+  ];
+
+  return {
+    all: function() {
+      return faqs;
+    },
+    get: function(faqId) {
+      
+      return faqs[faqId];
+    }
+  }
+})
+
+.factory('MagFaqService', function() {
+
+  var faqs = [
+		{ id: 0, title: 'Can I place an order outside of the United States?', detail: 'For Canadian ordering information, please call 1-888-752-4690 or email magazines@scholastic.ca. For all other international ordering information, please call (573) 632-1687.' }, 
+		{ id: 1, title: 'What is the Scholastic Guarantee?', detail: 'We stand behind every magazine and book we publish. Take up to 30 days to evaluate the magazine you ordered. If you are not completely satisfied, simply call us or write “cancel” on your invoice and owe nothing.' },
+		{ id: 2, title: 'When will I receive my order?', detail: 'Generally you should expect to receive your first issue 4–6 weeks after you place your order (during the school year). After, the first issue you will receive your magazines according to the editorial calendar.' },
+		{ id: 3, title: 'How do I cancel my classroom magazines order?', detail: 'Write cancel on your invoice or call 1-800-SCHOLASTIC (1-800-724-6527) or email magazinecs@scholastic.com and provide your account number, name and full shipping address. You will be charged for all issues mailed after the 30-day FREE-Trial period.' }, 
+		{ id: 4, title: 'What are the shipping costs?', detail: '10% is charged for Scholastic Classroom Magazines and 9% for books.' }
   ];
 
   return {
